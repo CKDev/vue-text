@@ -1,6 +1,6 @@
 {
   "name": "@ckd/vue-text",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "scripts": {
     "serve": "vue-cli-service serve demo/main.js",
     "build": "vue-cli-service build --modern --target lib src/text.vue",
