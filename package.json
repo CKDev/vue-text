@@ -1,7 +1,6 @@
 {
   "name": "@ckd/vue-text",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.0-alpha.1",
   "scripts": {
     "serve": "vue-cli-service serve demo/main.js",
     "build": "vue-cli-service build --modern --target lib src/text.vue",
@@ -35,7 +34,7 @@
     "vue-template-compiler": "^2.5.21"
   },
   "publishConfig": {
-    "access": "private"
+    "access": "public"
   },
   "eslintConfig": {
     "root": true,
