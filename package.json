@@ -15,7 +15,7 @@
     "directives"
   ],
   "dependencies": {
-    "@ckd/vue-input": "file:../input"
+    "@ckd/vue-input": "^0.1.0-alpha.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
