@@ -1,29 +1,53 @@
-# text
+# CKD Vue Text
 
-## Project setup
+## Installation
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
+yarn add @ckd/vue-text@latest
 ```
 
-### Compiles and minifies for production
+## Demo
+
+A simple demo of several component implementations can be found in the packages /demo directory. It can be run using `yarn serve`
+
+## Usage
+
+Register the component for use in a Vue application
+
 ```
-yarn run build
+import Text from '@ckd/vue-text'
+
+// Import vue-button stylesheet
+import '@ckd/vue-text/dist/@ckd/vue-text.css'
+
+Vue.component('v-text', Text)
 ```
 
-### Run your tests
+or, use UMD:
+
 ```
-yarn run test
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/@ckd/vue-text"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/@ckd/vue-text@latest/dist/@ckd/vue-text.css">
+
+<script>
+new Vue({
+  components: {
+    VText: window['@ckd/vue-text']
+  }
+}).$mount('#app')
+</script>
 ```
 
-### Lints and fixes files
+Then, use the component in your markup
 ```
-yarn run lint
+<v-text placeholder="Hello World" label="Write Something" />
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Options
+
+TODO
+
+## Tests
+
+TODO
