@@ -7,6 +7,7 @@
           ref="input"
           :type="type"
           :placeholder="placeholder"
+          :value="value"
           v-bind="$attrs"
           v-on="listeners"
         />
@@ -39,6 +40,9 @@ export default {
   extends: VInput,
   mixins: [Maskable],
   props: {
+    value: {
+      type: String
+    },
     type: {
       type: String,
       default: 'text'
@@ -133,10 +137,7 @@ export default {
         input: (event) => {
           this.updateInput(event)
           this.verify(event.target.value)
-          //if(this.mask) {
-          //  this.applyMask(event)
-          //}
-          //this.$emit('input', event.target.value)
+          this.$emit('input', event.target.value)
         },
         focus: (event) => {
           this.isFocused = true
@@ -158,7 +159,7 @@ export default {
   data: function() {
     return {
       isFocused: false,
-      hasInput: (this.$attrs.value || '').trim() != '',
+      hasInput: (this.value || this.$attrs.value || '').trim() != '',
       hasPlaceholder: this.placeholder.trim() != ''
     }
   }
@@ -178,7 +179,7 @@ export default {
   &.has-input .input ~ .label,
   &.has-placeholder .input ~ .label {
     transform: scale(0.9);
-    top: -12px;
+    top: -50%;
   }
 }
 

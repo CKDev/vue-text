@@ -104,7 +104,7 @@
     <div class="segment">
       <label>Text Input Variant</label>
       <p>Simple input style variant with validation on blur</p>
-      <v-text label="First Name" class="frame validate-length" validate-on="blur" data-length="8" :show-errors="false">
+      <v-text label="First Name" class="frame validate-length" validate-on="blur" data-length="8" :show-errors="false" v-model="text">
         <template v-slot="props">
           <transition name="fade-slide">
             <div v-if="props.errors.length" class="errors-box">
@@ -125,9 +125,6 @@ export default {
   name: 'app',
   components: { VText },
   methods: {
-    getRegExpChar: function(char) {
-      return ['*', '?', '$', '^', '.'].includes(char) ? `\\${char}` : char
-    },
     getPasswordStrength: function(validations) {
       return ['weak', 'weak', 'medium', 'strong', 'excellent'][validations.valid().length - 1]
     },
@@ -137,7 +134,8 @@ export default {
   },
   data: function(){
     return {
-      input: ''
+      input: '',
+      text: 'hello'
     }
   }
 }
